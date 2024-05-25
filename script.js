@@ -2,6 +2,7 @@ const userInput = document.getElementById("userInput");
 const addBtn = document.getElementById("addBtn");
 const list = document.getElementById("list");
 
+// 
 addBtn.addEventListener("click", () => {
     let task = userInput.value;
 
@@ -21,12 +22,13 @@ addBtn.addEventListener("click", () => {
 list.addEventListener("click", (e) => {
     if(e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
-        saveData();
+        saveData(); 
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
-        saveData();
+        saveData(); 
     }
 });
+
 
 const saveData = () => {
     localStorage.setItem("data", list.innerHTML);
@@ -35,5 +37,4 @@ const saveData = () => {
 const displaySavedData = () => {
     list.innerHTML = localStorage.getItem("data");
 };
-
 displaySavedData();
