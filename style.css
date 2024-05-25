@@ -1,138 +1,142 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Acme", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Acme", sans-serif;
 }
 
-.container{
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(30deg, rgba(195,34,181,1) 0%, rgba(253,187,45,1) 100%);
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    padding-top: 10vh;
+.container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    30deg,
+    rgba(195, 34, 181, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding-top: 10vh;
 }
 
-.toDo{
-    background-color: rgba(255,255,255,0.3);
-    padding: 3vh;
-    border-radius: 25px;
-    min-width: 350px;
-    max-width: 375px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.toDo {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 3vh;
+  border-radius: 25px;
+  min-width: 350px;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.heading{
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 15px;
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 15px;
 }
 
-.heading h1{
-    color: #ffffff;
-    font-family: "Acme", sans-serif;
-    font-weight: 800;
-    font-size: 25px;
+.heading h1 {
+  color: #ffffff;
+  font-family: "Acme", sans-serif;
+  font-weight: 800;
+  font-size: 25px;
 }
 
-.heading img{
-    width: 50px;
+.heading img {
+  width: 50px;
 }
 
-.searchBar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 45px;
-    background: #fff;
-    border-radius: 25px;
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  background: #fff;
+  border-radius: 25px;
 }
 
-.searchBar input{
-    flex: 1;
-    height: 80%;
-    padding: 15px;
-    border: none;
-    outline: none;
-    border-radius: 25px 0 0 25px;
-    background: transparent;
+.searchBar input {
+  flex: 1;
+  height: 80%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 25px 0 0 25px;
+  background: transparent;
 }
 
-.searchBar button{
-    height: 98%;
-    width: 30%;
-    outline: none;
-    border: none;
-    border-radius: 25px;
-    background: rgb(229, 13, 13);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
+.searchBar button {
+  height: 98%;
+  width: 30%;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  background: rgb(229, 13, 13);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.container ul li{
-    position: relative;
-    list-style: none;
-    font-size: 17px;
-    font-weight: 300;
-    padding: 12px 8px 12px 40px;
-    user-select: none;
-    cursor: pointer;
+.container ul li {
+  position: relative;
+  list-style: none;
+  font-size: 17px;
+  font-weight: 300;
+  padding: 12px 8px 12px 40px;
+  user-select: none;
+  cursor: pointer;
 }
 
-.container ul li::before{
-    content: "";
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    bottom: 12px;
-    background-image: url(./assets/unchecked.png);
-    background-size: cover;
-    background-position: center;
-    left: 0;
+.container ul li::before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  bottom: 12px;
+  background-image: url(./assets/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  left: 0;
 }
 
-.container ul li span{
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    bottom: 12px;
-    right: 1px;
-    animation-name: hideContent;
-    animation-duration: 1s;
-    animation-timing-function: linear;
+.container ul li span {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  bottom: 12px;
+  right: 1px;
+  animation-name: hideContent;
+  animation-duration: 1s;
+  animation-timing-function: linear;
 }
 
-@keyframes hideContent{
-   from{
+@keyframes hideContent {
+  from {
     background-image: url(./assets/remove.png);
     background-size: cover;
     background-position: center;
-   }
-   to{
+  }
+  to {
     background-image: none;
-   }
+  }
 }
 
-.container ul li span:hover{
-    background-image: url(./assets/remove.png);
-    background-size: cover;
-    background-position: center;
+.container ul li span:hover {
+  background-image: url(./assets/remove.png);
+  background-size: cover;
+  background-position: center;
 }
 
-.checked{
-    color: #555;
-    font-weight: 200;
+.checked {
+  color: #555;
+  font-weight: 200;
 }
 
-.container ul li.checked::before{
-    background-image: url(./assets/checked.png);
+.container ul li.checked::before {
+  background-image: url(./assets/checked.png);
 }
